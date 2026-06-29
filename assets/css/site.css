@@ -723,6 +723,24 @@ figure.guide-figure figcaption { font-size:.85rem; color:var(--wg06); margin-top
 .dl-card h3 { color:#fff; font-size:1.5rem; }
 .dl-card p { color:#cfcac6; margin-top:6px; max-width:46ch; }
 
+/* ---------- mobile: CTAs go full-width for clean alignment ---------- */
+@media (max-width:560px){
+  .sci-hero .actions { flex-direction:column; align-items:stretch; }
+  .sci-hero .actions .btn,
+  .sci-cta .btn,
+  .ctaband .btn,
+  .lp-cta .btn,
+  .form-actions .btn,
+  .dl-card .btn,
+  .mt-m .btn {
+    width:100%; justify-content:center; margin-left:0 !important;
+  }
+  /* stacked download/secondary buttons within a .mt-m group */
+  .mt-m .btn + .btn { margin-top:10px; }
+  /* drop the vertical hairline in CTA bands once the button wraps full-width */
+  .sci-cta .divider, .lp-cta .divider { display:none; }
+}
+
 /* ---------- print: downloadable guide as PDF ---------- */
 @media print {
   .site-header, .nav-toggle, .stage-nav, .ctaband, .btn, .crumbs { display:none !important; }

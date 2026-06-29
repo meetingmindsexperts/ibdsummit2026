@@ -19,3 +19,7 @@ node_modules/
 # Raw font source downloads (we ship only the optimized assets/fonts/*.woff2)
 assets/Johnson Display/
 assets/JOHNSONTEXT Regular.ttf
+
+# Playwright test artifacts
+.playwright-mcp/
+*.playwright.png

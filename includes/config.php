@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '22';
+const ASSET_VER = '23';
 
 /** Core event facts, reused across pages and SEO. */
 $SITE = [
@@ -26,7 +26,7 @@ $SITE = [
     'tagline'  => 'Charting the Gastro Journey in IBD',
     'dates'    => '3–4 July 2026',
     'venue'    => 'Marriott Marquis Dubai Creek',
-    'email'    => 'ibdsummit@its.jnj.com',
+    'email'    => 'ibdsummit@meetingmindsexperts.com',
     'url'      => 'https://ibdsummit2026.com',
 ];
 
