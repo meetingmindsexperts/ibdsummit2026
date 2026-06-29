@@ -22,10 +22,11 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
+          port: 21
           # Target directory on Hostinger. For the primary domain this is
           # usually /public_html/ . Set it as a secret to keep it flexible.
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          server-dir: /
           # Files that must never ship to the web server.
           exclude: |
             **/.git*
