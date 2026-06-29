@@ -21,6 +21,13 @@ $strip  = $strip  ?? $HCP_STRIP;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?= e($title) ?></title>
 <meta name="description" content="<?= e($desc) ?>">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=<?= ASSET_VER ?>">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=<?= ASSET_VER ?>">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=<?= ASSET_VER ?>">
+<meta name="theme-color" content="#EB1700">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/JohnsonDisplay.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/JohnsonText.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css?v=<?= ASSET_VER ?>">
 </head>
 <body>
