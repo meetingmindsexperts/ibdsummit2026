@@ -11,10 +11,11 @@
 | File                  | Family          | Source weight        | Used for                          |
 |-----------------------|-----------------|----------------------|-----------------------------------|
 | `JohnsonDisplay.woff2`| Johnson Display | Bold (700)           | headings, taglines (`--font-display`, mapped 400–700) |
-| `JohnsonText.woff2`   | Johnson Text    | Regular (400)        | body, labels (`--font-text`; bold is synthesised) |
 
-The raw source downloads (`assets/Johnson Display/`, `assets/JOHNSONTEXT
-Regular.ttf`) are **git-ignored** — only these optimized woff2 files ship.
+Body text (`--font-text`) intentionally uses **Arial** (J&J's specified
+fallback) — Johnson Text is not loaded as a web font. The raw source downloads
+(`assets/Johnson Display/`, `assets/JOHNSONTEXT Regular.ttf`) are
+**git-ignored** — only the optimized woff2 above ships.
 
 ## How they're wired
 

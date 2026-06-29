@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '21';
+const ASSET_VER = '22';
 
 /** Core event facts, reused across pages and SEO. */
 $SITE = [

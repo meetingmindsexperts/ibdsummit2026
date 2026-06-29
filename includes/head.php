@@ -27,7 +27,6 @@ $strip  = $strip  ?? $HCP_STRIP;
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=<?= ASSET_VER ?>">
 <meta name="theme-color" content="#EB1700">
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/JohnsonDisplay.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/JohnsonText.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css?v=<?= ASSET_VER ?>">
 </head>
 <body>
