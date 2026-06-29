@@ -16,6 +16,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Materialize the server-side secrets file from repo secrets. It is
+      # git-ignored (never committed) but uploaded by the FTP step below, and
+      # blocked from web access by includes/.htaccess.
+      - name: Write server-side secrets
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          {
+            echo '<?php'
+            echo "define('SUPABASE_URL', '${SUPABASE_URL}');"
+            echo "define('SUPABASE_SERVICE_KEY', '${SUPABASE_SERVICE_KEY}');"
+          } > includes/secrets.php
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -37,3 +51,5 @@ jobs:
             router.php
             .editorconfig
             **/*.md
+            supabase/**
+            includes/secrets.example.php

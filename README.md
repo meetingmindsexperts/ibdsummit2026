@@ -120,10 +120,45 @@ it manually from the **Actions** tab (“Run workflow”).
 
 ---
 
+## Registration form → Supabase
+
+The **register** page (`/register`) submits server-side (PHP → Supabase REST)
+into a `registrations` table. The contact form is left as a front-end demo.
+
+How it works: `register.php` calls `process_form('register')`
+([includes/forms.php](includes/forms.php)) which validates server-side, checks a
+honeypot, inserts via [includes/supabase.php](includes/supabase.php) using the
+**service_role** key, then Post/Redirect/Gets to `/register?sent=1`. Form fields
+and columns are defined in `form_specs()` — add a field there + a column in the
+schema to extend it.
+
+### One-time setup
+
+1. **Create the table** — run [supabase/schema.sql](supabase/schema.sql) in the
+   Supabase SQL editor (creates `registrations`, enables RLS with no public
+   policies so only the server can read/write).
+2. **Add two GitHub secrets** (Settings → Secrets and variables → Actions):
+
+   | Secret                  | Value (Supabase → Project Settings → API)            |
+   |-------------------------|------------------------------------------------------|
+   | `SUPABASE_URL`          | Project URL, e.g. `https://xxxx.supabase.co`         |
+   | `SUPABASE_SERVICE_KEY`  | **service_role** key (secret — bypasses RLS)         |
+
+   The deploy writes these into `includes/secrets.php` on the runner (git-ignored,
+   never committed) and uploads it; `includes/.htaccess` blocks it from the web.
+3. **Local testing:** copy `includes/secrets.example.php` →
+   `includes/secrets.php` and fill in the same two values. Without it, the form
+   validates + shows a graceful error but doesn't insert.
+
+View submissions in the Supabase **Table editor** → `registrations`.
+
+---
+
 ## Before public launch (carried over from the demo)
 
-- **Forms** (`contact.php`, `register.php`) are front-end demos — wire them to a
-  real handler/CRM/email before going live (see the `TODO` comments).
+- **Registration** is wired to Supabase (above). The **contact form**
+  (`contact.php`) is still a front-end demo — wire it to a handler only if you
+  want contact messages captured too.
 - Confirm faculty photo consent/usage rights; 3 faculty still show initials
   (Hala Ibrahim, Khalid Alejji, Mohammed Nabil) — add headshots to
   `assets/faculty/` and switch `initials` to `img` in `config.php`.

@@ -21,7 +21,7 @@ require partial('head');
     <div class="contact-cols">
       <div>
         <div class="sci-head"><span class="num">01</span><h2>Send a message</h2></div>
-        <!-- TODO: wire this form to a real handler/CRM before launch (currently front-end demo). -->
+        <!-- Front-end demo only — not wired to a backend. Registrations go to Supabase via /register. -->
         <form class="form" onsubmit="return false;" aria-label="Contact form">
           <div class="row2">
             <div class="field"><label for="c-first">First name <span class="req">*</span></label><input id="c-first" name="first" type="text" autocomplete="given-name" required></div>
@@ -39,7 +39,7 @@ require partial('head');
           <div class="field"><label for="c-msg">Message <span class="req">*</span></label><textarea id="c-msg" name="message" required></textarea></div>
           <label class="consent"><input type="checkbox" required> I confirm I am a healthcare professional and consent to being contacted about this enquiry.</label>
           <div class="form-actions"><button class="btn" type="submit">Send message <span class="arrow">→</span></button></div>
-          <p class="form-note">This form is a front-end demo — connect it to your preferred form/email handler before launch.</p>
+          <p class="form-note">This contact form is a front-end demo — connect it to your preferred handler if you want contact messages captured too.</p>
         </form>
       </div>
       <div>

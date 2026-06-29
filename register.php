@@ -5,6 +5,8 @@ $title  = 'Register your interest — J&J IBD Summit 2026';
 $desc   = 'Register your interest in the J&J IBD Summit 2026, 3–4 July 2026, Marriott Marquis Dubai Creek. For healthcare professionals.';
 $active = 'register';
 
+$result = process_form('register');
+
 require partial('head');
 ?>
 
@@ -28,36 +30,40 @@ require partial('head');
     <div class="contact-cols">
       <div>
         <div class="sci-head"><span class="num">01</span><h2>Your details</h2></div>
-        <!-- TODO: wire this form to your registration/CRM handler before launch (currently front-end demo). -->
-        <form class="form" onsubmit="return false;" aria-label="Registration form">
+        <?= form_banner($result) ?>
+        <form class="form" method="post" action="/register" aria-label="Registration form">
+          <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
           <div class="row2">
-            <div class="field"><label for="r-first">First name <span class="req">*</span></label><input id="r-first" name="first" type="text" autocomplete="given-name" required></div>
-            <div class="field"><label for="r-last">Last name <span class="req">*</span></label><input id="r-last" name="last" type="text" autocomplete="family-name" required></div>
+            <div class="field"><label for="r-first">First name <span class="req">*</span></label><input id="r-first" name="first" type="text" autocomplete="given-name" value="<?= e(form_value('first')) ?>" required></div>
+            <div class="field"><label for="r-last">Last name <span class="req">*</span></label><input id="r-last" name="last" type="text" autocomplete="family-name" value="<?= e(form_value('last')) ?>" required></div>
           </div>
           <div class="row2">
-            <div class="field"><label for="r-email">Email <span class="req">*</span></label><input id="r-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label for="r-phone">Mobile</label><input id="r-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="r-email">Email <span class="req">*</span></label><input id="r-email" name="email" type="email" autocomplete="email" value="<?= e(form_value('email')) ?>" required></div>
+            <div class="field"><label for="r-phone">Mobile</label><input id="r-phone" name="phone" type="tel" autocomplete="tel" value="<?= e(form_value('phone')) ?>"></div>
           </div>
           <div class="row2">
             <div class="field"><label for="r-role">Profession <span class="req">*</span></label>
               <select id="r-role" name="role" required>
-                <option value="">Please select…</option><option>Physician / Consultant</option><option>Specialist registrar / Fellow</option><option>Nurse</option><option>Pharmacist</option><option>Researcher</option><option>Other HCP</option>
+                <?php foreach (['' => 'Please select…','Physician / Consultant'=>'Physician / Consultant','Specialist registrar / Fellow'=>'Specialist registrar / Fellow','Nurse'=>'Nurse','Pharmacist'=>'Pharmacist','Researcher'=>'Researcher','Other HCP'=>'Other HCP'] as $val => $opt): ?>
+                <option value="<?= e($val) ?>"<?= form_value('role') === $val ? ' selected' : '' ?>><?= e($opt) ?></option>
+                <?php endforeach; ?>
               </select>
             </div>
             <div class="field"><label for="r-specialty">Specialty</label>
               <select id="r-specialty" name="specialty">
-                <option>Gastroenterology</option><option>Internal medicine</option><option>Colorectal surgery</option><option>Immunology</option><option>Dermatology</option><option>Other</option>
+                <?php foreach (['Gastroenterology','Internal medicine','Colorectal surgery','Immunology','Dermatology','Other'] as $opt): ?>
+                <option<?= form_value('specialty') === $opt ? ' selected' : '' ?>><?= e($opt) ?></option>
+                <?php endforeach; ?>
               </select>
             </div>
           </div>
           <div class="row2">
-            <div class="field"><label for="r-org">Organisation / Institution</label><input id="r-org" name="org" type="text" autocomplete="organization"></div>
-            <div class="field"><label for="r-country">Country</label><input id="r-country" name="country" type="text" autocomplete="country-name"></div>
+            <div class="field"><label for="r-org">Organisation / Institution</label><input id="r-org" name="org" type="text" autocomplete="organization" value="<?= e(form_value('org')) ?>"></div>
+            <div class="field"><label for="r-country">Country</label><input id="r-country" name="country" type="text" autocomplete="country-name" value="<?= e(form_value('country')) ?>"></div>
           </div>
-          <label class="consent"><input type="checkbox" required> I confirm I am a healthcare professional. <span class="req">*</span></label>
-          <label class="consent"><input type="checkbox" required> I consent to Johnson &amp; Johnson Innovative Medicine contacting me about the J&amp;J IBD Summit 2026, in line with the privacy policy. <span class="req">*</span></label>
+          <label class="consent"><input type="checkbox" name="consent_hcp" value="1" required> I confirm I am a healthcare professional. <span class="req">*</span></label>
+          <label class="consent"><input type="checkbox" name="consent_contact" value="1" required> I consent to Johnson &amp; Johnson Innovative Medicine contacting me about the J&amp;J IBD Summit 2026, in line with the privacy policy. <span class="req">*</span></label>
           <div class="form-actions"><button class="btn" type="submit">Submit registration <span class="arrow">→</span></button></div>
-          <p class="form-note">This form is a front-end demo — connect it to your registration/CRM handler before launch.</p>
         </form>
       </div>
       <div>
