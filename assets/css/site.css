@@ -49,7 +49,7 @@
   --ls-eyebrow: .12em;
 
   /* ---- Layout ---- */
-  --maxw: 1200px;
+  --maxw: 1320px;
   --gut:  clamp(20px, 5vw, 64px);
   --radius: 14px;
   --shadow: 0 10px 30px rgba(40,20,15,.07);
