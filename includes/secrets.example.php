@@ -15,5 +15,5 @@
  * never in the browser or the repo.
  */
 
-define('SUPABASE_URL', 'https://vpdfzubrfcmekwhyxmsg.supabase.co');
+define('SUPABASE_URL', 'https://YOUR-PROJECT.supabase.co');
 define('SUPABASE_SERVICE_KEY', 'YOUR-SERVICE-ROLE-KEY');
