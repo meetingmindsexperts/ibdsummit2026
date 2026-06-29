@@ -3,8 +3,39 @@
    Johnson & Johnson Innovative Medicine
    Derived from approved web mockups + JnJ_Event_Branding_SKILL.md
    Type: Johnson Display / Johnson Text  → Arial (J&J fallback)
-   NOTE: swap @font-face for licensed Johnson fonts before release.
    ============================================================ */
+
+/* ------------------------------------------------------------
+   Brand fonts — Johnson Display / Johnson Text.
+   These are LICENSED J&J fonts (not public / not on any CDN).
+   Obtain the .woff2 files from the J&J brand portal or your
+   agency contact, drop them in assets/fonts/ with the names
+   below, then UNCOMMENT this block — no other change needed.
+   Until then the site renders in Arial (J&J's own fallback).
+   See assets/fonts/README.md.
+------------------------------------------------------------- */
+/*
+@font-face {
+  font-family: "Johnson Display";
+  src: url("/assets/fonts/JohnsonDisplay-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Johnson Display";
+  src: url("/assets/fonts/JohnsonDisplay-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Johnson Text";
+  src: url("/assets/fonts/JohnsonText-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Johnson Text";
+  src: url("/assets/fonts/JohnsonText-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+*/
 
 :root {
   /* ---- Brand primaries (exact J&J values) ---- */
