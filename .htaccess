@@ -1,0 +1,49 @@
+# J&J IBD Summit 2026 — Apache config for Hostinger (clean URLs)
+
+Options -Indexes
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # RewriteBase / assumes the site is served from the domain web root.
+
+  # Force HTTPS (Hostinger terminates SSL; comment out if testing without a cert)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # 301 any legacy *.html request to its clean URL
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # 301 a visible *.php request to its clean URL
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.php[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # Internally serve /foo with foo.php when it exists
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>
+
+# Long cache for static assets, short for HTML
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css            "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg          "access plus 1 year"
+  ExpiresByType image/png           "access plus 1 year"
+  ExpiresByType image/svg+xml       "access plus 1 year"
+  ExpiresByType application/pdf     "access plus 1 month"
+  ExpiresByType text/html           "access plus 0 seconds"
+</IfModule>
+
+# Basic security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Custom error pages (optional — created if you add them)
+# ErrorDocument 404 /404.php

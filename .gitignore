@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Dependencies (none required, but just in case)
+node_modules/
+
+# Logs / temp
+*.log
+.ftp-deploy-sync-state.json
+
+# Local env / secrets — never commit
+.env
+.env.*
