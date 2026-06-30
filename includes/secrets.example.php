@@ -16,4 +16,8 @@
  */
 
 define('SUPABASE_URL', 'https://YOUR-PROJECT.supabase.co');
-define('SUPABASE_SERVICE_KEY', 'YOUR-SERVICE-ROLE-KEY');
+define('SUPABASE_SERVICE_KEY', 'YOUR-SECRET-KEY');   // sb_secret_… (server-side only)
+
+// Admin login for /admin (viewing registrations). Pick a strong password.
+define('ADMIN_USER', 'admin');
+define('ADMIN_PASSWORD', 'change-me');

@@ -90,6 +90,7 @@ function process_form(string $key): array
     // Honeypot: a hidden field bots tend to fill. Silently accept (so the bot
     // thinks it worked) without writing anything.
     if (form_value('website') !== '') {
+        app_log($key . '_spam_blocked', ['email' => form_value('email')]);
         form_redirect($spec['success']);
     }
 
@@ -103,9 +104,11 @@ function process_form(string $key): array
         }
     }
     if ($missing) {
+        app_log($key . '_validation_error', ['missing' => $missing]);
         return ['status' => 'error', 'message' => 'Please complete: ' . implode(', ', $missing) . '.'];
     }
     if (!filter_var(form_value('email'), FILTER_VALIDATE_EMAIL)) {
+        app_log($key . '_validation_error', ['reason' => 'invalid_email']);
         return ['status' => 'error', 'message' => 'Please enter a valid email address.'];
     }
 
@@ -125,9 +128,11 @@ function process_form(string $key): array
 
     [$ok, $err] = supabase_insert($spec['table'], $row);
     if ($ok) {
+        app_log($key . '_success', ['email' => $row['email'], 'name' => trim(($row['first_name'] ?? '') . ' ' . ($row['last_name'] ?? ''))]);
         form_redirect($spec['success']);
     }
 
+    app_log($key . '_supabase_error', ['email' => $row['email'], 'error' => $err]);
     error_log("[ibdsummit] form '$key' insert failed: $err");
     return ['status' => 'error', 'message' => 'Sorry — something went wrong submitting the form. Please try again, or email ' . ($GLOBALS['SITE']['email'] ?? '') . '.'];
 }

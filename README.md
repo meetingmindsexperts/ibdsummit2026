@@ -154,6 +154,33 @@ View submissions in the Supabase **Table editor** → `registrations`.
 
 ---
 
+## Admin panel + logs
+
+**`/admin`** — a password-protected page to view and export registrations. It
+reads from Supabase server-side with the secret key (so the data never depends
+on the browser), lists submissions newest-first, exports CSV (`/admin?export=1`),
+and shows a recent-activity log. Not indexed, no caching.
+
+Set two more GitHub secrets (same place as the Supabase ones):
+
+| GitHub secret    | Value                                  |
+|------------------|----------------------------------------|
+| `ADMIN_USER`     | admin username you choose              |
+| `ADMIN_PASSWORD` | a strong password you choose           |
+
+The deploy writes them into `includes/secrets.php` alongside the Supabase
+values. For local dev, set them in `includes/secrets.php` too. Until they're
+set, `/admin` shows "credentials not configured".
+
+**Logs** — `includes/logger.php` writes JSON-line events to
+`storage/logs/app-YYYY-MM-DD.log` (kept out of the web root by
+`storage/.htaccess`; the files are git-ignored). It records form outcomes
+(`register_success`, `register_validation_error`, `register_spam_blocked`,
+`register_supabase_error`) and `admin_login_failed`. The latest entries show at
+the bottom of `/admin`. No secrets or full payloads are logged.
+
+---
+
 ## Before public launch (carried over from the demo)
 
 - **Registration** is wired to Supabase (above). The **contact form**

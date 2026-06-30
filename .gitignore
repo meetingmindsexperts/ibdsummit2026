@@ -26,3 +26,6 @@ assets/JOHNSONTEXT Regular.ttf
 
 # Server-side secrets (written at deploy from GitHub secrets)
 includes/secrets.php
+
+# Runtime logs (keep the dir, ignore the files)
+storage/logs/*.log

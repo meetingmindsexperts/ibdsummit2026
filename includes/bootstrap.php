@@ -20,7 +20,10 @@ if (is_file(__DIR__ . '/secrets.php')) {
 }
 if (!defined('SUPABASE_URL'))         { define('SUPABASE_URL', getenv('SUPABASE_URL') ?: ''); }
 if (!defined('SUPABASE_SERVICE_KEY')) { define('SUPABASE_SERVICE_KEY', getenv('SUPABASE_SERVICE_KEY') ?: ''); }
+if (!defined('ADMIN_USER'))           { define('ADMIN_USER', getenv('ADMIN_USER') ?: ''); }
+if (!defined('ADMIN_PASSWORD'))       { define('ADMIN_PASSWORD', getenv('ADMIN_PASSWORD') ?: ''); }
 
+require __DIR__ . '/logger.php';
 require __DIR__ . '/supabase.php';
 require __DIR__ . '/forms.php';
 

@@ -23,11 +23,15 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ADMIN_USER: ${{ secrets.ADMIN_USER }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         run: |
           {
             echo '<?php'
             echo "define('SUPABASE_URL', '${SUPABASE_URL}');"
             echo "define('SUPABASE_SERVICE_KEY', '${SUPABASE_SERVICE_KEY}');"
+            echo "define('ADMIN_USER', '${ADMIN_USER}');"
+            echo "define('ADMIN_PASSWORD', '${ADMIN_PASSWORD}');"
           } > includes/secrets.php
 
       - name: Deploy via FTP
