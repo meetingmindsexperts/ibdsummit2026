@@ -14,6 +14,10 @@ if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 $nav    = $nav    ?? $MAIN_NAV;
 $active = $active ?? '';
 $strip  = $strip  ?? $HCP_STRIP;
+
+$base      = rtrim($SITE['url'], '/');
+$canonical = $base . strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
+$ogImage   = $base . '/assets/img/og-image.jpg?v=' . ASSET_VER;
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +25,21 @@ $strip  = $strip  ?? $HCP_STRIP;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?= e($title) ?></title>
 <meta name="description" content="<?= e($desc) ?>">
+<link rel="canonical" href="<?= e($canonical) ?>">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="<?= e($SITE['name']) ?>">
+<meta property="og:title" content="<?= e($title) ?>">
+<meta property="og:description" content="<?= e($desc) ?>">
+<meta property="og:url" content="<?= e($canonical) ?>">
+<meta property="og:image" content="<?= e($ogImage) ?>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="<?= e($SITE['name'] . ' — ' . $SITE['tagline']) ?>">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<?= e($title) ?>">
+<meta name="twitter:description" content="<?= e($desc) ?>">
+<meta name="twitter:image" content="<?= e($ogImage) ?>">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=<?= ASSET_VER ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=<?= ASSET_VER ?>">

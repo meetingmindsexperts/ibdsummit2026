@@ -19,36 +19,56 @@ session_set_cookie_params(['lifetime' => 0, 'path' => '/', 'httponly' => true, '
 session_name('ibd_admin');
 session_start();
 
+// CSRF token (per session) for the login + logout forms.
+if (empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(32));
+}
+$CSRF = $_SESSION['csrf'];
+
 function admin_configured(): bool
 {
     return ADMIN_USER !== '' && ADMIN_PASSWORD !== '';
 }
 
-// Logout
-if (isset($_GET['logout'])) {
-    $_SESSION = [];
-    session_destroy();
+function csrf_ok(): bool
+{
+    return is_string($_POST['csrf'] ?? null)
+        && hash_equals($_SESSION['csrf'] ?? '', $_POST['csrf']);
+}
+
+$is_post = ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST';
+
+// Logout (POST + CSRF)
+if ($is_post && isset($_POST['logout'])) {
+    if (csrf_ok()) {
+        $_SESSION = [];
+        session_destroy();
+    }
     header('Location: /admin');
     exit;
 }
 
 // Login
 $login_error = '';
-if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && isset($_POST['admin_login'])) {
-    $u = (string) ($_POST['username'] ?? '');
-    $p = (string) ($_POST['password'] ?? '');
-    $ok = admin_configured()
-        && hash_equals(ADMIN_USER, $u)
-        && hash_equals(ADMIN_PASSWORD, $p);
-    if ($ok) {
-        session_regenerate_id(true);
-        $_SESSION['admin'] = true;
-        header('Location: /admin');
-        exit;
+if ($is_post && isset($_POST['admin_login'])) {
+    if (!csrf_ok()) {
+        $login_error = 'Your session expired — please try again.';
+    } else {
+        $u = is_string($_POST['username'] ?? null) ? $_POST['username'] : '';
+        $p = is_string($_POST['password'] ?? null) ? $_POST['password'] : '';
+        $ok = admin_configured()
+            && hash_equals(ADMIN_USER, $u)
+            && hash_equals(ADMIN_PASSWORD, $p);
+        if ($ok) {
+            session_regenerate_id(true);
+            $_SESSION['admin'] = true;
+            header('Location: /admin');
+            exit;
+        }
+        app_log('admin_login_failed', ['user' => mb_substr($u, 0, 100)]);
+        usleep(700000); // throttle brute force
+        $login_error = 'Invalid credentials.';
     }
-    app_log('admin_login_failed', ['user' => $u]);
-    usleep(700000); // throttle brute force
-    $login_error = 'Invalid credentials.';
 }
 
 $authed = !empty($_SESSION['admin']);
@@ -95,6 +115,7 @@ if (!$authed) {
         echo '<p class="err">' . e($login_error) . '</p>';
     }
     echo '<form method="post" action="/admin">';
+    echo '<input type="hidden" name="csrf" value="' . e($CSRF) . '">';
     echo '<div class="field"><label for="u">Username</label><input id="u" name="username" autocomplete="username" autofocus></div>';
     echo '<div class="field"><label for="p">Password</label><input id="p" name="password" type="password" autocomplete="current-password"></div>';
     echo '<button class="btn" type="submit" name="admin_login" value="1" style="width:100%;justify-content:center">Sign in</button>';
@@ -118,7 +139,14 @@ if (isset($_GET['export'])) {
         $line = [];
         foreach ($COLUMNS as $c) {
             $v = $r[$c] ?? '';
-            $line[] = is_bool($v) ? ($v ? 'yes' : 'no') : $v;
+            $v = is_bool($v) ? ($v ? 'yes' : 'no') : (string) $v;
+            // Neutralise spreadsheet formula injection: prefix a leading
+            // =, +, -, @, tab or CR with an apostrophe so Excel/Sheets treat
+            // it as text, not a formula.
+            if ($v !== '' && in_array($v[0], ['=', '+', '-', '@', "\t", "\r"], true)) {
+                $v = "'" . $v;
+            }
+            $line[] = $v;
         }
         fputcsv($out, $line);
     }
@@ -132,7 +160,7 @@ echo '<h1 style="margin:0">Registrations</h1>';
 echo '<span class="pill">' . count($rows) . ' total</span>';
 echo '<span class="sp"></span>';
 echo '<a class="btn btn--ghost" href="/admin?export=1">Export CSV ↓</a>';
-echo '<a class="btn btn--ghost" href="/admin?logout=1">Sign out</a>';
+echo '<form method="post" action="/admin" style="display:inline"><input type="hidden" name="csrf" value="' . e($CSRF) . '"><button class="btn btn--ghost" type="submit" name="logout" value="1">Sign out</button></form>';
 echo '</div>';
 
 if (!$ok) {
