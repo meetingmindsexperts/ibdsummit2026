@@ -38,7 +38,7 @@ $SITE = [
 ];
 
 /** HCP / patient banner strip text. */
-$HCP_STRIP     = 'For healthcare professionals only';
+$HCP_STRIP     = 'For healthcare professionals only · By invitation only';
 $PATIENT_STRIP = 'For patient education only · This guide does not replace medical advice';
 
 /** Primary navigation (summit pages). 'key' drives the active state. */
