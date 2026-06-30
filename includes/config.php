@@ -29,7 +29,7 @@ $SITE = [
     'tagline'  => 'Charting the Gastro Journey in IBD',
     'dates'    => '3–4 July 2026',
     'venue'    => 'Marriott Marquis Dubai Creek',
-    'email'    => 'ibd@meetingmindsexperts.com',
+    'email'    => 'ibdsummit@meetingmindsexperts.com',
     'url'      => 'https://ibdsummit2026.com',
 ];
 
