@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '26';
+const ASSET_VER = '27';
 
 /** Google Analytics 4 measurement ID. Empty string disables analytics. */
 const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
