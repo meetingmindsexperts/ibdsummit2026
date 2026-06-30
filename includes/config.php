@@ -48,7 +48,7 @@ $MAIN_NAV = [
     ['label' => 'Nursing',   'href' => '/nursing',       'key' => 'nursing'],
     ['label' => 'Faculty',   'href' => '/faculty',       'key' => 'faculty'],
     ['label' => 'Venue',     'href' => '/venue',         'key' => 'venue'],
-    ['label' => 'IBD Guide', 'href' => '/guide/',        'key' => 'guide'],
+    // ['label' => 'IBD Guide', 'href' => '/guide/',     'key' => 'guide'], // hidden for now — pages still live at /guide/
     ['label' => 'Contact',   'href' => '/contact',       'key' => 'contact'],
 ];
 
@@ -200,7 +200,7 @@ $FOOTER_MAIN = [
     'cols'  => [
         ['Summit',    [['About', '/#maincontent'], ['Programme', '/programme'], ['Faculty', '/faculty']]],
         ['Visit',     [['Venue', '/venue'], ['Contact', '/contact']]],
-        ['Resources', [['IBD Guide', '/guide/'], ['Nursing programme', '/nursing']]],
+        ['Resources', [['Nursing programme', '/nursing'], ['Contact', '/contact']]],
     ],
     'bottom_left'  => '© 2026 Johnson & Johnson Innovative Medicine · All rights reserved · For healthcare professionals only',
     'bottom_right' => '<a href="https://www.meetingmindsgroup.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>',

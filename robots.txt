@@ -3,5 +3,6 @@ Allow: /
 Disallow: /includes/
 Disallow: /storage/
 Disallow: /admin
+Disallow: /guide/
 
 Sitemap: https://ibdsummit2026.com/sitemap.xml
