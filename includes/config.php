@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '29';
+const ASSET_VER = '30';
 
 /** Google Analytics 4 measurement ID. Empty string disables analytics. */
 const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
@@ -193,7 +193,7 @@ $NURSING = [
 
 /** Footer used on summit pages. */
 $FOOTER_MAIN = [
-    'logo'  => '/assets/img/logo-corp-white.png?v=3',
+    'logo'  => '/assets/img/logo-jj-wordmark-white.png?v=' . ASSET_VER,
     'intro' => 'J&J IBD Summit 2026 — Charting the Gastro Journey in IBD. 3–4 July 2026, Marriott Marquis Dubai Creek.',
     // Pharmacovigilance / safety reporting (printed as raw HTML in the footer).
     'disclaimer' => 'To report <b>adverse events</b> or safety-related issues associated with Janssen products: <a href="mailto:GCC-PV2@ITS.JNJ.COM">GCC-PV2@ITS.JNJ.COM</a>.<br>For <b>Product Quality Complaints</b> and temperature excursions: <a href="mailto:JanssenQualityGCC@its.jnj.com">JanssenQualityGCC@its.jnj.com</a>.<br>Johnson &amp; Johnson Middle East FZ-LLC · DHCC Building 14 · Dubai, UAE',
@@ -208,7 +208,7 @@ $FOOTER_MAIN = [
 
 /** Footer used on the patient guide pages. */
 $FOOTER_GUIDE = [
-    'logo'  => '/assets/img/logo-corp-white.png?v=3',
+    'logo'  => '/assets/img/logo-jj-wordmark-white.png?v=' . ASSET_VER,
     'intro' => 'The Gastro Journey Guide — for educational purposes only. Always talk with your healthcare professional about your condition and treatment.',
     'cols'  => [
         ['Guide', [['1 · Understand', '/guide/stage-1'], ['2 · Recognize', '/guide/stage-2'], ['3 · Aim deeper', '/guide/stage-3']]],

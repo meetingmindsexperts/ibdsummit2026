@@ -160,9 +160,9 @@ section { padding-block: clamp(48px, 8vw, 96px); }
 .brandmark .l1 { font-weight:700; color:var(--ink); font-size:1.06rem; letter-spacing:-.02em; }
 .brandmark .l2 { font-weight:400; color:var(--red); font-size:.82rem; letter-spacing:0; }
 /* Official J&J IBD Summit logo lockup (real artwork — never over imagery) */
-.brand-logo { height:44px; width:auto; display:block; }
-@media (max-width:520px){ .brand-logo { height:38px; } }
-.site-footer .brand-logo { height:50px; margin-bottom:8px; }
+.brand-logo { height:26px; width:auto; display:block; }
+@media (max-width:520px){ .brand-logo { height:22px; } }
+.site-footer .brand-logo { height:30px; margin-bottom:12px; }
 
 /* ============================================================
    HOMEPAGE v3 — "Structured & Scientific" (grid-driven, agenda-forward)

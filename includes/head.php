@@ -65,7 +65,7 @@ $ogImage   = $base . '/assets/img/og-image.jpg?v=' . ASSET_VER;
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brandmark" href="/" aria-label="Johnson &amp; Johnson Innovative Medicine"><img class="brand-logo" src="/assets/img/logo-corp.png?v=3" alt="Johnson &amp; Johnson Innovative Medicine"></a>
+    <a class="brandmark" href="/" aria-label="Johnson &amp; Johnson"><img class="brand-logo" src="/assets/img/logo-jj-wordmark.png?v=<?= ASSET_VER ?>" alt="Johnson &amp; Johnson"></a>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav-links">
       <?= nav_links($nav, $active) ?>
