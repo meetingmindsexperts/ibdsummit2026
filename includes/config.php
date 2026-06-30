@@ -30,6 +30,10 @@ $SITE = [
     'dates'    => '3–4 July 2026',
     'venue'    => 'Marriott Marquis Dubai Creek',
     'email'    => 'ibdsummit@meetingmindsexperts.com',
+    'phone'       => '+971 4 276 1444',
+    'phone_hours' => 'Available Mon–Fri, 9am–6pm',
+    'office'      => 'DSC Tower – Office 508 & 509, Dubai Studio City, Dubai',
+    'pobox'       => '502464',
     'url'      => 'https://ibdsummit2026.com',
 ];
 
