@@ -20,6 +20,9 @@ if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 /** Bump to cache-bust CSS/JS after edits. */
 const ASSET_VER = '24';
 
+/** Google Analytics 4 measurement ID. Empty string disables analytics. */
+const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
+
 /** Core event facts, reused across pages and SEO. */
 $SITE = [
     'name'     => 'J&J IBD Summit 2026',

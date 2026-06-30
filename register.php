@@ -80,4 +80,17 @@ require partial('head');
   </div>
 </section>
 
+<?php if (($result['status'] ?? '') === 'success' && GA_MEASUREMENT_ID !== ''): ?>
+<!-- Registration conversion: fired once on the post-submit success page. -->
+<script>
+  if (typeof gtag === 'function') {
+    gtag('event', 'sign_up', {
+      method: 'website',
+      event_category: 'registration',
+      event_label: 'J&J IBD Summit 2026'
+    });
+  }
+</script>
+<?php endif; ?>
+
 <?php require partial('footer'); ?>

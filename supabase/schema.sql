@@ -2,14 +2,14 @@
 -- J&J IBD Summit 2026 — form storage (Supabase / Postgres)
 -- Run once in the Supabase SQL editor for your project.
 --
--- The PHP backend inserts with the service_role key, which
--- BYPASSES row-level security. We enable RLS and add NO public
--- policies, so the anon/public key can neither read nor write —
--- submissions stay private to the service role (and dashboard).
+-- The PHP backend inserts with the SECRET key (sb_secret_…), which
+-- bypasses row-level security. We enable RLS and add NO public
+-- policies, so the publishable/anon key can neither read nor write —
+-- submissions stay private to the secret key (and the dashboard).
 -- ============================================================
 
 -- Registration form (register page)
-create table if not exists public.registrations (
+create table if not exists public.ibd_registrations (
   id               uuid primary key default gen_random_uuid(),
   created_at       timestamptz not null default now(),
   first_name       text not null,
@@ -25,8 +25,9 @@ create table if not exists public.registrations (
   source           text default 'website'
 );
 
-create index if not exists idx_registrations_created on public.registrations (created_at desc);
+create index if not exists idx_ibd_registrations_created
+  on public.ibd_registrations (created_at desc);
 
--- Lock the table down: RLS on, no public policies (only the service_role,
+-- Lock the table down: RLS on, no public policies (only the secret key,
 -- used by the PHP backend, can write/read).
-alter table public.registrations enable row level security;
+alter table public.ibd_registrations enable row level security;

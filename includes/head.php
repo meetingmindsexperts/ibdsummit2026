@@ -28,6 +28,16 @@ $strip  = $strip  ?? $HCP_STRIP;
 <meta name="theme-color" content="#EB1700">
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/JohnsonDisplay.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css?v=<?= ASSET_VER ?>">
+<?php if (GA_MEASUREMENT_ID !== ''): ?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= e(GA_MEASUREMENT_ID) ?>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '<?= e(GA_MEASUREMENT_ID) ?>');
+</script>
+<?php endif; ?>
 </head>
 <body>
 <a class="skip-link" href="#maincontent">Skip to content</a>

@@ -14,7 +14,7 @@ function form_specs(): array
 {
     return [
         'register' => [
-            'table'    => 'registrations',
+            'table'    => 'ibd_registrations',
             'success'  => '/register?sent=1',
             'fields'   => [
                 'first'     => 'first_name',
