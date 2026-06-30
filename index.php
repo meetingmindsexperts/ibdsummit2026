@@ -17,8 +17,8 @@ require partial('head');
       <p class="tagline">A regional scientific meeting for the IBD community.</p>
       <p class="intro">Two days of expert-led science across the Gulf — advancing collaboration, sharing the latest evidence, and shaping the future of inflammatory bowel disease care.</p>
       <div class="actions">
-        <a class="btn" href="/register">Register your interest <span class="arrow">→</span></a>
-        <a class="btn btn--ghost" href="/programme">View programme</a>
+        <a class="btn" href="/programme">View the programme <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="/faculty">Meet the faculty</a>
       </div>
     </div>
     <div class="photo">

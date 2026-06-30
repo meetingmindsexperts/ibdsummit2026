@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '25';
+const ASSET_VER = '26';
 
 /** Google Analytics 4 measurement ID. Empty string disables analytics. */
 const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
@@ -195,13 +195,15 @@ $NURSING = [
 $FOOTER_MAIN = [
     'logo'  => '/assets/img/logo-corp-white.png?v=3',
     'intro' => 'J&J IBD Summit 2026 — Charting the Gastro Journey in IBD. 3–4 July 2026, Marriott Marquis Dubai Creek.',
+    // Pharmacovigilance / safety reporting (printed as raw HTML in the footer).
+    'disclaimer' => 'To report <b>adverse events</b> or safety-related issues associated with Janssen products: <a href="mailto:GCC-PV2@ITS.JNJ.COM">GCC-PV2@ITS.JNJ.COM</a>.<br>For <b>Product Quality Complaints</b> and temperature excursions: <a href="mailto:JanssenQualityGCC@its.jnj.com">JanssenQualityGCC@its.jnj.com</a>.<br>Johnson &amp; Johnson Middle East FZ-LLC · DHCC Building 14 · Dubai, UAE',
     'cols'  => [
         ['Summit',    [['About', '/#maincontent'], ['Programme', '/programme'], ['Faculty', '/faculty']]],
         ['Visit',     [['Venue', '/venue'], ['Contact', '/contact']]],
-        ['Resources', [['IBD Guide', '/guide/'], ['Register', '/register']]],
+        ['Resources', [['IBD Guide', '/guide/'], ['Nursing programme', '/nursing']]],
     ],
     'bottom_left'  => '© 2026 Johnson & Johnson Innovative Medicine · All rights reserved · For healthcare professionals only',
-    'bottom_right' => '<a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a>',
+    'bottom_right' => '<a href="https://www.meetingmindsgroup.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>',
 ];
 
 /** Footer used on the patient guide pages. */
@@ -214,5 +216,5 @@ $FOOTER_GUIDE = [
         ['Summit', [['Home', '/'], ['Programme', '/programme']]],
     ],
     'bottom_left'  => '© 2026 Johnson & Johnson Innovative Medicine. All rights reserved.',
-    'bottom_right' => 'For patient education only · <a href="#">Privacy</a>',
+    'bottom_right' => 'For patient education only · <a href="https://www.meetingmindsgroup.com/privacy-policy" target="_blank" rel="noopener">Privacy</a>',
 ];

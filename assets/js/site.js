@@ -9,11 +9,11 @@
     });
   }
 
-  // Sticky register CTA (injected on every page except the register page)
-  if (!/\/register\/?$/.test(location.pathname)) {
+  // Sticky CTA (injected on every page except the programme page itself)
+  if (!/\/programme\/?$/.test(location.pathname)) {
     var sticky = document.createElement('div');
     sticky.className = 'sticky-cta';
-    sticky.innerHTML = '<a class="btn" href="/register">Register your interest <span class="arrow">→</span></a>';
+    sticky.innerHTML = '<a class="btn" href="/programme">View the programme <span class="arrow">→</span></a>';
     document.body.appendChild(sticky);
     var onScroll = function () { sticky.classList.toggle('show', window.scrollY > 600); };
     window.addEventListener('scroll', onScroll, { passive: true });

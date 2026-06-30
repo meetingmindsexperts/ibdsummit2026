@@ -14,6 +14,7 @@ $footer = $footer ?? $FOOTER_MAIN;
     <div>
       <img class="brand-logo" src="<?= e($footer['logo']) ?>" alt="Johnson &amp; Johnson Innovative Medicine">
       <p><?= e($footer['intro']) ?></p>
+      <?php if (!empty($footer['disclaimer'])): ?><p class="footer-disclaimer"><?= $footer['disclaimer'] ?></p><?php endif; ?>
     </div>
     <?php foreach ($footer['cols'] as $col): ?>
     <div><h4><?= $col[0] ?></h4><?php foreach ($col[1] as $link): ?><a href="<?= e($link[1]) ?>"><?= e($link[0]) ?></a><?php endforeach; ?></div>
