@@ -198,9 +198,8 @@ $FOOTER_MAIN = [
     // Pharmacovigilance / safety reporting (printed as raw HTML in the footer).
     'disclaimer' => 'To report <b>adverse events</b> or safety-related issues associated with Janssen products: <a href="mailto:GCC-PV2@ITS.JNJ.COM">GCC-PV2@ITS.JNJ.COM</a>.<br>For <b>Product Quality Complaints</b> and temperature excursions: <a href="mailto:JanssenQualityGCC@its.jnj.com">JanssenQualityGCC@its.jnj.com</a>.<br>Johnson &amp; Johnson Middle East FZ-LLC · DHCC Building 14 · Dubai, UAE',
     'cols'  => [
-        ['Summit',    [['About', '/#maincontent'], ['Programme', '/programme'], ['Faculty', '/faculty']]],
+        ['Summit',    [['About', '/#maincontent'], ['HCP Programme', '/programme'], ['Nursing programme', '/nursing'],['Faculty', '/faculty']]],
         ['Visit',     [['Venue', '/venue'], ['Contact', '/contact']]],
-        ['Resources', [['Nursing programme', '/nursing'], ['Contact', '/contact']]],
     ],
     'bottom_left'  => '© 2026 Johnson & Johnson Innovative Medicine · All rights reserved · For healthcare professionals only',
     'bottom_right' => '<a href="https://www.meetingmindsgroup.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>',
