@@ -559,7 +559,7 @@ section { padding-block: clamp(48px, 8vw, 96px); }
 .fac { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:0; overflow:hidden; }
 .fac .avatar { width:100%; aspect-ratio:16/17; height:auto; border-radius:0; border:0; margin:0 0 14px; background:#f4f1ee;
   display:grid; place-items:center; color:var(--red); font-family:var(--font-display); font-weight:700; font-size:2rem; }
-.fac img.avatar { object-fit:cover; object-position:50% 50%; background:#fff; display:block; }
+.fac img.avatar { object-fit:cover; object-position:50% 22%; background:#fff; display:block; }
 .fac .tagrole { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red); margin:0 18px 8px; }
 .fac .name { font-family:var(--font-display); font-weight:700; font-size:var(--fs-400); padding:0 18px; }
 .fac .role { font-size:var(--fs-200); color:var(--wg06); margin-top:3px; padding:0 18px 20px; }
