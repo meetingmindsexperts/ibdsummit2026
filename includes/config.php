@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '30';
+const ASSET_VER = '31';
 
 /** Google Analytics 4 measurement ID. Empty string disables analytics. */
 const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
@@ -198,7 +198,8 @@ $FOOTER_MAIN = [
     // Pharmacovigilance / safety reporting (printed as raw HTML in the footer).
     'disclaimer' => 'To report <b>adverse events</b> or safety-related issues associated with Janssen products: <a href="mailto:GCC-PV2@ITS.JNJ.COM">GCC-PV2@ITS.JNJ.COM</a>.<br>For <b>Product Quality Complaints</b> and temperature excursions: <a href="mailto:JanssenQualityGCC@its.jnj.com">JanssenQualityGCC@its.jnj.com</a>.<br>Johnson &amp; Johnson Middle East FZ-LLC · DHCC Building 14 · Dubai, UAE',
     'cols'  => [
-        ['Summit',    [['About', '/#maincontent'], ['HCP Programme', '/programme'], ['Nursing programme', '/nursing'],['Faculty', '/faculty']]],
+        ['Summit',    [['About', '/#maincontent'], ['Faculty', '/faculty']]],
+        ['Programme', [['HCP Programme', '/programme'], ['Nursing programme', '/nursing']]],
         ['Visit',     [['Venue', '/venue'], ['Contact', '/contact']]],
     ],
     'bottom_left'  => '© 2026 Johnson & Johnson Innovative Medicine · All rights reserved · For healthcare professionals only',
