@@ -2,7 +2,7 @@
 require __DIR__ . '/includes/bootstrap.php';
 
 $title  = 'Venue — J&J IBD Summit 2026';
-$desc   = 'Venue for the J&J IBD Summit 2026 — Marriott Marquis Dubai Creek, Jewel of the Creek, Port Saeed, Dubai, UAE.';
+$desc   = 'Venue for the J&J IBD Summit 2026 — Marriott Creek Hotel, Dubai, UAE.';
 $active = 'venue';
 
 require partial('head');
@@ -12,12 +12,12 @@ require partial('head');
   <div class="wrap">
     <p class="eyebrow">J&amp;J IBD Summit 2026</p>
     <h1 class="display-l" style="color:var(--red);margin-top:10px">Venue</h1>
-    <p class="lead mt-s">Marriott Marquis Dubai Creek — a newly unveiled landmark in the Jewel of the Creek, host to two days of expert-led science.</p>
+    <p class="lead mt-s">Marriott Creek Hotel, Dubai — a landmark hotel on Dubai Creek, host to two days of expert-led science.</p>
   </div>
 </section>
 
 <?= fact_bar([
-    ['Venue', 'Marriott Marquis Dubai Creek', true],
+    ['Venue', $SITE['venue'], true],
     ['Area', 'Deira (Jewel of the Creek), Dubai'],
     ['Dates', $SITE['dates']],
     ['Nearest metro', 'Deira City Centre (Green Line)'],
@@ -28,16 +28,16 @@ require partial('head');
     <div class="sci-head"><span class="num">01</span><h2>Overview</h2></div>
     <div class="sci-split">
       <div>
-        <h3>Marriott Marquis Dubai Creek</h3>
-        <p>The newly unveiled Marriott Marquis Dubai Creek sits in the Jewel of the Creek, moments from Deira City Centre and minutes from Downtown Dubai. A dedicated conference floor with state-of-the-art meeting rooms — alongside six restaurants and lounges, an outdoor pool, gym and spa — makes it a fitting home for the J&amp;J IBD Summit 2026.</p>
+        <h3>Marriott Creek Hotel, Dubai</h3>
+        <p>The Marriott Creek Hotel sits on Dubai Creek, moments from Deira City Centre and minutes from Downtown Dubai. A dedicated conference floor with state-of-the-art meeting rooms — alongside restaurants and lounges, an outdoor pool, gym and spa — makes it a fitting home for the J&amp;J IBD Summit 2026.</p>
         <div class="meta-mini">
           <div><div class="k">Address</div><div class="vv">Jewel of the Creek, Port Saeed, Dubai, UAE</div></div>
           <div><div class="k">Format</div><div class="vv">In-person · Healthcare professionals</div></div>
         </div>
       </div>
-      <div class="media-frame"><img src="/assets/img/venue-exterior.jpg" alt="Marriott Marquis Dubai Creek — waterfront exterior on Dubai Creek"></div>
+      <div class="media-frame"><img src="/assets/img/venue-exterior.jpg" alt="Marriott Creek Hotel — waterfront exterior on Dubai Creek"></div>
     </div>
-    <div class="media-frame venue-wide"><img src="/assets/img/venue-room.jpg" alt="Conference and meeting space at the Marriott Marquis Dubai Creek"></div>
+    <div class="media-frame venue-wide"><img src="/assets/img/venue-room.jpg" alt="Conference and meeting space at the Marriott Creek Hotel"></div>
   </div>
 </section>
 

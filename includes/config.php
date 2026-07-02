@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '33';
+const ASSET_VER = '34';
 
 /** Google Analytics 4 measurement ID. Empty string disables analytics. */
 const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
@@ -26,9 +26,9 @@ const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
 /** Core event facts, reused across pages and SEO. */
 $SITE = [
     'name'     => 'J&J IBD Summit 2026',
-    'tagline'  => 'Charting the Gastro Journey in IBD',
+    'tagline'  => 'The IL-23 era for IBD: UAE Experience Exchange',
     'dates'    => '3–4 July 2026',
-    'venue'    => 'Marriott Marquis Dubai Creek',
+    'venue'    => 'Marriott Creek Hotel, Dubai, UAE',
     'email'    => 'ibdsummit@meetingmindsexperts.com',
     'phone'       => '+971 4 276 1444',
     'phone_hours' => 'Available Mon–Fri, 9am–6pm',
@@ -107,44 +107,43 @@ $PROGRAMME = [
     [
         'tab'     => 'Day 1 — 3 July',
         'heading' => 'Day 1 — 3 July 2026',
-        'sub'     => 'Chairs: Pedro Matos Rosa · Dr. Hala Ibrahim · Dr. Sameer Al Awadhi · Dr. Mazin Rasool · Dr. Khalid Alejji · Dr. Ahmed Al Darmaki',
+        'sub'     => 'Chairs: Pedro Matos-Rosa · Sameer Al Awadhi · Khalid El Eji · Ahmed Al Darmaki',
         'slots'   => [
-            ['time' => '13:30', 'title' => 'Registration', 'type' => 'break'],
-            ['time' => '14:00', 'title' => 'Guests arrive at the VIP room', 'type' => 'break'],
-            ['time' => '14:30', 'title' => 'Welcome remarks', 'meta' => '<b>Pedro Matos Rosa</b> · <b>Asgar Rangoonwala</b>', 'type' => 'feature'],
-            ['time' => '14:50', 'title' => 'GCC IBD Patient Guide presented to H.E. Dr. Yousif Al Serkal', 'meta' => '1st IBD Nursing Programme announcement & trainer appreciation', 'type' => 'feature'],
-            ['time' => '15:10', 'title' => 'Remission Pledge Wall inauguration', 'meta' => 'H.E. Dr. Yousif Al Serkal', 'type' => 'feature'],
-            ['time' => '15:30', 'title' => 'The patient journey: living with IBD', 'meta' => '<b>Speaker:</b> Patient voice &nbsp;·&nbsp; <b>Chair:</b> Hala Ibrahim'],
-            ['time' => '15:50', 'title' => 'Break', 'type' => 'break'],
-            ['time' => '16:05', 'title' => 'Following the constellations: the IL-23 story in IBD', 'meta' => '<b>Speaker:</b> Sara El Ouali'],
-            ['time' => '16:25', 'title' => 'The skin perspective', 'meta' => '<b>Speaker:</b> Alia Galadari &nbsp;·&nbsp; <b>Chairs:</b> Sameer Al Awadhi & Mazen Al Jabri'],
-            ['time' => '16:45', 'title' => 'Management of patients across immunological borders', 'meta' => '<b>Speaker:</b> Ahmed Zayat'],
-            ['time' => '17:05', 'title' => 'Panel Q&A', 'meta' => 'All faculty'],
-            ['time' => '17:20', 'title' => 'Navigating deep space: breaking new ground in ulcerative colitis', 'meta' => '<b>Speaker:</b> Abdelhakim Elganyni'],
-            ['time' => '17:40', 'title' => 'Taking STRIDEs towards mucosal healing: case-based discussion', 'meta' => '<b>Speaker:</b> Hussam Saleh &nbsp;·&nbsp; <b>Chairs:</b> Khalid Alejji & Ahmed Al Darmaki'],
-            ['time' => '18:00', 'title' => 'Applying the data to real-life clinical scenarios in UC: case-based discussion', 'meta' => '<b>Speaker:</b> Rahul Nathwani'],
-            ['time' => '18:20', 'title' => 'Panel Q&A', 'meta' => 'All faculty'],
+            ['time' => '14:00', 'title' => 'Arrival & Registration', 'type' => 'break'],
+            ['time' => '14:30', 'title' => "The IBD Focus: Challenges, Opportunities & What's Next?", 'meta' => '<b>Speaker:</b> Sameer Al Awadhi &nbsp;·&nbsp; <b>Chair:</b> Pedro Matos-Rosa'],
+            ['time' => '14:45', 'title' => 'The Patient Stories: Living with IBD', 'meta' => '<b>Speaker:</b> Sameer Al Awadhi'],
+            ['time' => '14:55', 'title' => 'The Patient Booklet & Nursing Role in IBD Patient Care', 'meta' => '<b>Speaker:</b> Sameer Al Awadhi'],
+            ['time' => '15:00', 'title' => 'Remission Pledge Wall', 'meta' => '<b>Speaker:</b> Sameer Al Awadhi', 'type' => 'feature'],
+            ['time' => '15:15', 'title' => 'Break', 'type' => 'break'],
+            ['time' => '15:30', 'title' => 'Following the constellations: the IL-23 story in IBD', 'meta' => '<b>Speaker:</b> Fatema Al Alawi &nbsp;·&nbsp; <b>Chair:</b> Sameer Al Awadhi'],
+            ['time' => '15:50', 'title' => 'Beyond the Gut: IL-23 and the Skin', 'meta' => '<b>Speaker:</b> Alia Galadari'],
+            ['time' => '16:10', 'title' => 'Completing the Journey: IL-23 and the Joints', 'meta' => '<b>Speaker:</b> Olena Garmish'],
+            ['time' => '16:30', 'title' => 'Panel – Q&A', 'meta' => 'All faculty'],
+            ['time' => '16:45', 'title' => 'Navigating deep space: breaking new grounds in Ulcerative Colitis', 'meta' => '<b>Speaker:</b> AbdelHakim Elganyni &nbsp;·&nbsp; <b>Chairs:</b> Khalid El Eji & Ahmed Al Darmaki'],
+            ['time' => '17:05', 'title' => 'Navigating the multiverse: tailoring the trajectory in diverse UC patients', 'meta' => '<b>Speaker:</b> Hussam Saleh'],
+            ['time' => '17:25', 'title' => 'Charting New Constellations: The Real-World IL-23 Era in Middle Eastern Ulcerative Colitis', 'meta' => '<b>Speaker:</b> Nabil Quraishi'],
+            ['time' => '17:45', 'title' => 'Panel – Q&A', 'meta' => 'All faculty'],
         ],
     ],
     [
         'tab'     => 'Day 2 — 4 July',
         'heading' => 'Day 2 — 4 July 2026',
-        'sub'     => 'Chairs: Dr. Sara El Ouali · Dr. Mariam Al Khatry · Dr. Ahmed Al Saegh · Dr. Mazen Taha · Dr. Zaher Koutoubi · Dr. Khalid Osman',
+        'sub'     => 'Chairs: Sara El Ouali · Lisa Sharkey · Ahmed Al Sayegh · Mazen Taha · Zaher Koutoubi · Khalid Osman',
         'slots'   => [
-            ['time' => '09:00', 'title' => "Shooting for the stars: reaching new heights in Crohn's disease", 'meta' => '<b>Speaker:</b> Ahmad Jazzar'],
-            ['time' => '09:20', 'title' => 'Early intervention in IBD', 'meta' => '<b>Speaker:</b> Abdelhakim Elganyni &nbsp;·&nbsp; <b>Chairs:</b> Sara El Ouali & Mariam Al Khatry'],
-            ['time' => '09:40', 'title' => "Practical insights for IL-23 inhibitors in Crohn's disease", 'meta' => '<b>Speaker:</b> Piyush Somani'],
-            ['time' => '10:00', 'title' => 'Panel Q&A', 'meta' => 'All faculty'],
-            ['time' => '10:20', 'title' => 'Break', 'type' => 'break'],
-            ['time' => '10:30', 'title' => 'Constellations of IBD care: aligning strategies towards personalised management', 'meta' => '<b>Speaker:</b> Ahmed Sultan'],
-            ['time' => '10:50', 'title' => 'IL-23 and the future of IBD treatment', 'meta' => '<b>Speaker:</b> Cecilio Azar &nbsp;·&nbsp; <b>Chairs:</b> Ahmed Al Saegh & Mazen Taha'],
-            ['time' => '11:10', 'title' => 'A giant leap for IBD? Future considerations for IL-23 inhibition in the clinic', 'meta' => '<b>Speaker:</b> Nabil Quraishi'],
-            ['time' => '11:30', 'title' => 'Panel', 'meta' => 'All faculty'],
-            ['time' => '11:40', 'title' => "Improving outcomes for perianal fistulising Crohn's disease", 'meta' => '<b>Speaker:</b> Mohamed Badr Alam'],
-            ['time' => '12:00', 'title' => 'Open for debate: surgery vs medication', 'meta' => '<b>With:</b> Sara Sajwani — patient voice', 'type' => 'feature', 'chip' => 'Debate'],
-            ['time' => '12:45', 'title' => 'At the crossroads: navigating complex IBD decisions', 'meta' => '<b>Speaker:</b> Nabil Quraishi &nbsp;·&nbsp; <b>Chairs:</b> Zaher Koutoubi & Khalid Osman'],
-            ['time' => '13:05', 'title' => 'Panel Q&A', 'meta' => 'All faculty'],
-            ['time' => '13:15', 'title' => 'Close — summary', 'type' => 'feature'],
+            ['time' => '09:00', 'title' => "Shooting for the stars: reaching new heights in Crohn's disease", 'meta' => '<b>Speaker:</b> Ahmad Jazzar &nbsp;·&nbsp; <b>Chairs:</b> Sara El Ouali & Lisa Sharkey'],
+            ['time' => '09:20', 'title' => 'Seizing the window of opportunity: case-based discussion CD', 'meta' => '<b>Speaker:</b> AbdelHakim ElGanyni'],
+            ['time' => '09:40', 'title' => "Practical insights for IL-23 inhibitors in Crohn's Disease", 'meta' => '<b>Speaker:</b> Piyush Somani'],
+            ['time' => '10:00', 'title' => 'Panel – Q&A', 'meta' => 'All faculty'],
+            ['time' => '10:20', 'title' => 'Constellations of IBD care: aligning strategies towards personalized management — IL-23 and the future of IBD treatment', 'meta' => '<b>Speaker:</b> Ahmed Sultan &nbsp;·&nbsp; <b>Chairs:</b> Ahmed Al Sayegh & Mazen Taha'],
+            ['time' => '10:40', 'title' => 'A giant leap for IBD? Future considerations for IL-23 inhibition in the clinic', 'meta' => '<b>Speaker:</b> Rahul Nathwani'],
+            ['time' => '11:00', 'title' => 'Panel – Q&A', 'meta' => 'All faculty'],
+            ['time' => '11:15', 'title' => 'Break', 'type' => 'break'],
+            ['time' => '11:30', 'title' => 'Understanding the Reality of Perianal Fistulizing CD', 'meta' => '<b>Speaker:</b> Mohamed Badre Alam &nbsp;·&nbsp; <b>Chairs:</b> Zaher Koutoubi & Khalid Osman'],
+            ['time' => '11:50', 'title' => 'Redefining Perianal Fistulizing CD Care', 'meta' => '<b>Speaker:</b> Sara El Ouali'],
+            ['time' => '12:10', 'title' => 'Advancing Perianal Fistulizing CD Care: Surgical Excellence', 'meta' => '<b>Speaker:</b> Shafik Sidani'],
+            ['time' => '12:40', 'title' => 'Perianal Fistulizing CD: The Multidisciplinary Approach', 'meta' => '<b>Speaker:</b> Sara El Ouali, Shafik Sidani, Mohamed Badre Alam'],
+            ['time' => '13:40', 'title' => 'Panel – Q&A', 'meta' => 'All faculty'],
+            ['time' => '13:55', 'title' => 'Closing – Summary', 'meta' => 'All faculty', 'type' => 'feature'],
         ],
     ],
 ];
@@ -164,10 +163,10 @@ $NURSING = [
             ['time' => '12:15', 'title' => 'Lunch break', 'type' => 'break'],
             ['time' => '13:15', 'title' => 'Session 4 · Disease activity, classifications & monitoring', 'meta' => 'Montreal classification · clinical disease activity indices · biomarkers (CRP & faecal calprotectin) · endoscopic & radiological monitoring · treat-to-target & tight disease control'],
             ['time' => '14:15', 'title' => 'Afternoon coffee break', 'type' => 'break'],
-            ['time' => '14:30', 'title' => 'Session 5 · The IBD nurse role in management', 'meta' => 'Scope of IBD nursing practice · patient education & counselling · coordination within the MDT · telephone advice & triage · advocacy & patient empowerment'],
-            ['time' => '15:30', 'title' => 'Session 6 · Health maintenance in IBD', 'meta' => 'Vaccination · infection prevention & screening · cancer surveillance · bone health & osteoporosis · lifestyle interventions & smoking cessation'],
-            ['time' => '16:30', 'title' => 'Q&A / open discussion', 'type' => 'feature'],
-            ['time' => '17:00', 'title' => 'Reflection, wrap-up & Day 1 close', 'type' => 'feature'],
+            ['time' => '15:30', 'title' => 'Session 5 · The IBD nurse role in management', 'meta' => 'Scope of IBD nursing practice · patient education & counselling · coordination within the MDT · telephone advice & triage · advocacy & patient empowerment'],
+            ['time' => '16:30', 'title' => 'Session 6 · Health maintenance in IBD', 'meta' => 'Vaccination · infection prevention & screening · cancer surveillance · bone health & osteoporosis · lifestyle interventions & smoking cessation'],
+            ['time' => '17:30', 'title' => 'Q&A / open discussion', 'type' => 'feature'],
+            ['time' => '17:45', 'title' => 'Reflection, wrap-up & Day 1 close', 'type' => 'feature'],
         ],
     ],
     [
@@ -194,7 +193,7 @@ $NURSING = [
 /** Footer used on summit pages. */
 $FOOTER_MAIN = [
     'logo'  => '/assets/img/logo-jj-wordmark-white.png?v=' . ASSET_VER,
-    'intro' => 'J&J IBD Summit 2026 — Charting the Gastro Journey in IBD. 3–4 July 2026, Marriott Marquis Dubai Creek.',
+    'intro' => 'J&J IBD Summit 2026 — The IL-23 era for IBD: UAE Experience Exchange. 3–4 July 2026, Marriott Creek Hotel, Dubai, UAE.',
     // Pharmacovigilance / safety reporting (printed as raw HTML in the footer).
     'disclaimer' => 'To report <b>adverse events</b> or safety-related issues associated with Janssen products: <a href="mailto:GCC-PV2@ITS.JNJ.COM">GCC-PV2@ITS.JNJ.COM</a>.<br>For <b>Product Quality Complaints</b> and temperature excursions: <a href="mailto:JanssenQualityGCC@its.jnj.com">JanssenQualityGCC@its.jnj.com</a>.<br>Johnson &amp; Johnson Middle East FZ-LLC · DHCC Building 14 · Dubai, UAE',
     'cols'  => [

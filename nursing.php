@@ -2,7 +2,7 @@
 require __DIR__ . '/includes/bootstrap.php';
 
 $title  = 'IBD Nursing Training Programme — J&J IBD Summit 2026';
-$desc   = 'IBD Nursing Training Programme — a parallel two-day education programme for nurses, 3–4 July 2026, Marriott Marquis Dubai Creek.';
+$desc   = 'IBD Nursing Training Programme — a parallel two-day education programme for nurses, 3–4 July 2026, Marriott Creek Hotel, Dubai, UAE.';
 $active = 'nursing';
 
 require partial('head');

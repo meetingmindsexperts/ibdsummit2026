@@ -2,7 +2,7 @@
 require __DIR__ . '/includes/bootstrap.php';
 
 $title  = 'Register your interest — J&J IBD Summit 2026';
-$desc   = 'Register your interest in the J&J IBD Summit 2026, 3–4 July 2026, Marriott Marquis Dubai Creek. For healthcare professionals.';
+$desc   = 'Register your interest in the J&J IBD Summit 2026, 3–4 July 2026, Marriott Creek Hotel, Dubai, UAE. For healthcare professionals.';
 $active = 'register';
 
 $result = process_form('register');

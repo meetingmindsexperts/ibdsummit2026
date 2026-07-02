@@ -2,7 +2,7 @@
 require __DIR__ . '/includes/bootstrap.php';
 
 $title  = 'Programme — J&J IBD Summit 2026';
-$desc   = 'Scientific programme for the J&J IBD Summit 2026, 3–4 July 2026, Marriott Marquis Dubai Creek.';
+$desc   = 'Scientific programme for the J&J IBD Summit 2026, 3–4 July 2026, Marriott Creek Hotel, Dubai, UAE.';
 $active = 'programme';
 
 require partial('head');
@@ -13,7 +13,7 @@ require partial('head');
   <div class="wrap">
     <p class="eyebrow">J&amp;J IBD Summit 2026</p>
     <h1 class="display-l" style="color:var(--red);margin-top:10px">Scientific programme</h1>
-    <p class="lead mt-s">Charting the Gastro Journey in IBD — two days of expert-led science.</p>
+    <p class="lead mt-s">The IL-23 era for IBD: UAE Experience Exchange — two days of expert-led science.</p>
     <p class="mt-m"><a class="btn btn--ghost" href="/event-onepager.pdf" download>Download one-pager (PDF) <span class="arrow">↓</span></a> <a class="btn btn--ghost" href="/nursing" style="margin-left:10px">Nursing programme <span class="arrow">→</span></a></p>
   </div>
 </section>
