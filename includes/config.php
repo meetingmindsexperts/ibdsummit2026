@@ -18,7 +18,7 @@
 if (!defined('IBD_APP')) { http_response_code(403); exit('Forbidden'); }
 
 /** Bump to cache-bust CSS/JS after edits. */
-const ASSET_VER = '34';
+const ASSET_VER = '35';
 
 /** Google Analytics 4 measurement ID. Empty string disables analytics. */
 const GA_MEASUREMENT_ID = 'G-YQ2RPBB4P8';
@@ -65,18 +65,19 @@ $GUIDE_NAV = [
  * /assets/faculty/ with optional cache 'v') or 'initials' (placeholder).
  */
 $CHAIRS = [
-    ['name' => 'Pedro Matos Rosa',   'role' => 'General Manager, Gulf OPCO — Janssen / J&J Gulf', 'img' => 'pedro.jpg',      'v' => '3'],
+    ['name' => 'Pedro Matos-Rosa',   'role' => 'General Manager, Gulf OPCO — Janssen / J&J Gulf', 'img' => 'pedro.jpg',      'v' => '3'],
     ['name' => 'Dr. Hala Ibrahim',   'role' => 'Gastroenterology & Endoscopy, El Minya, Egypt',   'initials' => 'HI'],
     ['name' => 'Dr. Sameer Al Awadhi','role' => 'Rashid Hospital, Dubai Health',                  'img' => 'sameer.jpg',     'v' => '4'],
     ['name' => 'Dr. Mazin Rasool',   'role' => 'Mediclinic Parkview & Dubai Hills',               'img' => 'mazin.jpg',      'v' => '3'],
-    ['name' => 'Dr. Khalid Alejji',  'role' => 'Hamad Medical Corporation, Doha',                 'initials' => 'KA'],
+    ['name' => 'Dr. Khalid El Eji',  'role' => 'Hamad Medical Corporation, Doha',                 'initials' => 'KE'],
     ['name' => 'Dr. Ahmed Al Darmaki','role' => 'Royal Hospital, Oman',                           'img' => 'darmaki.jpg',    'v' => '3'],
     ['name' => 'Dr. Sara El Ouali',  'role' => 'Cleveland Clinic Abu Dhabi',                       'img' => 'sara.jpg',       'v' => '3'],
     ['name' => 'Dr. Mariam Al Khatry','role' => 'RAK Hospital',                                    'img' => 'mariam.jpg',     'v' => '3'],
-    ['name' => 'Dr. Ahmed Al Saegh', 'role' => 'Al Kindi Hospital, Bahrain',                      'img' => 'saegh.jpg',      'v' => '3'],
+    ['name' => 'Dr. Ahmed Al Sayegh', 'role' => 'Al Kindi Hospital, Bahrain',                     'img' => 'saegh.jpg',      'v' => '3'],
     ['name' => 'Dr. Mazen Taha',     'role' => 'Mediclinic Parkview & Dubai Hills',               'img' => 'mazen-taha.jpg', 'v' => '4'],
     ['name' => 'Dr. Zaher Koutoubi', 'role' => 'Hamad Medical Corporation, Doha',                 'img' => 'koutoubi.jpg',   'v' => '3'],
     ['name' => 'Dr. Khalid Osman',   'role' => 'Burjeel Hospital, Abu Dhabi',                      'img' => 'osman.jpg',      'v' => '3'],
+    ['name' => 'Dr. Lisa Sharkey',   'role' => 'Affiliation to be confirmed',                     'initials' => 'LS'],
 ];
 
 $SPEAKERS = [
@@ -92,9 +93,10 @@ $SPEAKERS = [
     ['name' => 'Dr. Ahmed Sultan',     'role' => 'Mediclinic Airport Road Hospital',         'img' => 'sultan.jpg',   'v' => '3'],
     ['name' => 'Dr. Cecilio Azar',     'role' => 'Clemenceau Medical Center, Dubai',         'img' => 'azar.jpg',     'v' => '3'],
     ['name' => 'Dr. Mohammed Nabil',   'role' => 'Sheikh Shakhbout Medical City',            'initials' => 'MN'],
-    ['name' => 'Dr. Mohamed Badr Alam','role' => 'Cleveland Clinic Abu Dhabi',               'img' => 'badralam.jpg', 'v' => '3'],
+    ['name' => 'Dr. Mohamed Badre Alam','role' => 'Cleveland Clinic Abu Dhabi',              'img' => 'badralam.jpg', 'v' => '3'],
     ['name' => 'Dr. Shafik Sidani',    'role' => 'Cleveland Clinic Abu Dhabi',               'img' => 'sidani.jpg',   'v' => '3'],
     ['name' => 'Dr. Nabil Quraishi',   'role' => 'Consultant Gastroenterologist',            'img' => 'quraishi.jpg', 'v' => '3'],
+    ['name' => 'Dr. Olena Garmish',    'role' => 'Affiliation to be confirmed',              'initials' => 'OG'],
 ];
 
 /**

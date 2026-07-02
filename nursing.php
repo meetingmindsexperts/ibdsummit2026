@@ -15,7 +15,7 @@ require partial('head');
     <h1 class="display-l" style="color:var(--red);margin-top:10px">IBD Nursing Training Programme</h1>
     <p class="lead mt-s">A parallel two-day education programme equipping nurses with the knowledge and skills to deliver expert IBD care — running alongside the scientific summit.</p>
     <p class="mt-m">
-      <a class="btn btn--ghost" href="/nursing-programme.pdf" download>Download programme (PDF) <span class="arrow">↓</span></a>
+      <a class="btn btn--ghost" href="/nursing-programme.pdf?v=<?= ASSET_VER ?>" download>Download programme (PDF) <span class="arrow">↓</span></a>
       <a class="btn btn--ghost" href="/programme" style="margin-left:10px">Scientific programme <span class="arrow">→</span></a>
     </p>
   </div>

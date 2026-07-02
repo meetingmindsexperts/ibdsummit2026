@@ -14,7 +14,7 @@ require partial('head');
     <p class="eyebrow">J&amp;J IBD Summit 2026</p>
     <h1 class="display-l" style="color:var(--red);margin-top:10px">Scientific programme</h1>
     <p class="lead mt-s">The IL-23 era for IBD: UAE Experience Exchange — two days of expert-led science.</p>
-    <p class="mt-m"><a class="btn btn--ghost" href="/event-onepager.pdf" download>Download one-pager (PDF) <span class="arrow">↓</span></a> <a class="btn btn--ghost" href="/nursing" style="margin-left:10px">Nursing programme <span class="arrow">→</span></a></p>
+    <p class="mt-m"><a class="btn btn--ghost" href="/event-onepager.pdf?v=<?= ASSET_VER ?>" download>Download programme (PDF) <span class="arrow">↓</span></a> <a class="btn btn--ghost" href="/nursing" style="margin-left:10px">Nursing programme <span class="arrow">→</span></a></p>
   </div>
 </section>
 
